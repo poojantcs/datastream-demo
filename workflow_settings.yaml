@@ -1,0 +1,5 @@
+defaultProject: cdf-entcon
+defaultLocation: US
+defaultDataset: tpcc1000
+defaultAssertionDataset: dataform_assertions
+dataformCoreVersion: 3.0.0

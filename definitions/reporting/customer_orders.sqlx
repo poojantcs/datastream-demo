@@ -1,0 +1,17 @@
+config {
+    type: "incremental",
+    uniqueKey: ["customer_id"],
+    description: "how many orders by customer",
+    tags: ["REPORTING"],
+    columns: {
+        customer_id: "Customer ID",
+        orders_num: "Number of order per Customer"
+    }
+}
+
+SELECT
+  orders.o_c_id AS customer_id,
+  COUNT(orders.o_id) AS orders_num
+FROM
+  ${ref("orders")} AS orders
+GROUP BY 1

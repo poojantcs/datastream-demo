@@ -1,0 +1,6 @@
+config {
+    type: "declaration",
+    database: "cdf-entcon",
+    schema: "tpcc1000",
+    name: "item",
+}

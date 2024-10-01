@@ -1,0 +1,17 @@
+config {
+    type: "table",
+    description: "how much stock in warehouse",
+    tags: ["REPORTING"],
+    columns: {
+        total_stock: "Total stock in warehouse"
+    }
+}
+
+SELECT
+  SUM(stock.s_quantity) AS total_stock
+FROM
+  ${ref("stock")} AS stock
+INNER JOIN
+  `cdf-entcon.tpcc1000.warehouse` AS warehouse
+ON
+  stock.s_w_id = warehouse.w_id

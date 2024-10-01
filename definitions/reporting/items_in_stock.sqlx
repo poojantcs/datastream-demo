@@ -1,0 +1,13 @@
+config {
+    type: "table",
+    description: "how many items in stock",
+    tags: ["REPORTING"],
+    columns: {
+        items_num: "Total items in stock"
+    }
+}
+
+SELECT
+  COUNT(stock.s_i_id) AS items_num
+FROM
+  ${ref("stock")} AS stock
